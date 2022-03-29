@@ -22,6 +22,7 @@
 
 <script>
 export default {
+  layout: 'default',
   data () {
     return {
       links: [
