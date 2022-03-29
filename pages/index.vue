@@ -9,7 +9,6 @@
 
 <script>
 export default {
-  name: 'IndexPage',
   data() {
       return {
         title: 'Heidster Studio'
