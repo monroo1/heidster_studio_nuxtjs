@@ -1,18 +1,15 @@
 <template>
   <main>
-    <IntroductionComponent />
-    <BenefitsComponent />
-    <ArgumentsComponent />
-    <ClientsComponent />
+    <ProjectsComponent />
+    <FeedbackComponent />
   </main>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
   data() {
       return {
-        title: 'Heidster Studio'
+        title: 'Проекты'
       }
     },
     head() {

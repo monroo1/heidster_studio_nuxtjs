@@ -1,0 +1,163 @@
+<template>
+  <div class="dialog" v-if="show === true" @click.stop="hideDialog">
+    <div class="dialog__content" @click.stop>
+      <h3 class="dialog__title">Форма заявки</h3>
+      <p class="dialog__des">Заполните короткую форму</p>
+      <form>
+        <input
+          type="text"
+          autocomplete="email"
+          name="Email"
+          class="dialog__email"
+          placeholder="Ваш Email"
+          v-model.trim="email"
+        />
+        <input
+          type="text"
+          autocomplete="name"
+          name="Name"
+          class="dialog__name"
+          placeholder="Ваше имя"
+          v-model.trim="name"
+        />
+        <input
+          type="tel"
+          autocomplete="tel"
+          name="Phone"
+          class="dialog__number"
+          placeholder="+7 999 999 99 99"
+          v-model.number="phone"
+        />
+        <textarea
+          name="text"
+          cols="30"
+          rows="5"
+          placeholder="Опишите кратко свой проект"
+          class="dialog__text"
+          v-model="text"
+        ></textarea>
+        <button class="dialog__btn">Отправить</button>
+      </form>
+      <p class="dialog__btn-des">
+        Нажимая кнопку отправить, вы даете согласие на обработку персональных
+        данных.
+      </p>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      email: "",
+      name: "",
+      phone: "",
+      text: "",
+    };
+  },
+  name: "form-dialog",
+  props: {
+    show: { type: Boolean, default: true },
+  },
+  methods: {
+    hideDialog() {
+      this.$emit("update:show", false);
+    },
+  },
+};
+</script>
+
+<style>
+.dialog {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  display: flex;
+  z-index: 999;
+}
+
+.dialog__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  background-color: #fff;
+  min-height: 50px;
+  min-width: 300px;
+  padding: 40px 45px;
+  max-width: 470px;
+}
+
+.dialog__content > form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.dialog__des {
+  color: #141b69;
+  font-size: 16px;
+  line-height: 1.55;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.dialog__title {
+  color: #141b69;
+  font-weight: 700;
+  font-family: "Roboto";
+  margin: 0;
+  margin-bottom: 11px;
+  font-size: 36px;
+  line-height: 1.23;
+}
+
+.dialog__content > form > input {
+  border-radius: 6px;
+  margin-bottom: 25px;
+  border: 1px solid #c9c9c9;
+  height: 60px;
+  padding: 0 20px;
+  font-size: 16px;
+  line-height: 1.33;
+  width: 100%;
+}
+
+.dialog__content > form > textarea {
+  border-radius: 6px;
+  border: 1px solid #c9c9c9;
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 25px;
+}
+
+.dialog__btn {
+  color: #ffffff;
+  background-color: #141b69;
+  border-radius: 5px;
+  width: 100%;
+  height: 54px;
+  text-align: center;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.dialog__btn-des {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.55;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 300;
+  color: #000;
+}
+</style>
