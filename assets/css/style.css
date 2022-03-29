@@ -46,7 +46,7 @@ h1 {
    */
 hr {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -72,6 +72,8 @@ pre {
    */
 a {
   background-color: transparent;
+  text-decoration: none;
+  color: #000;
 }
 
 /**
@@ -84,7 +86,7 @@ abbr[title] {
   text-decoration: underline;
   /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -190,9 +192,9 @@ select {
    * Correct the inability to style clickable types in iOS and Safari.
    */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
@@ -200,9 +202,9 @@ button,
    * Remove the inner border and padding in Firefox.
    */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -211,9 +213,9 @@ button::-moz-focus-inner,
    * Restore the focus styles unset by the previous rule.
    */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -232,7 +234,7 @@ fieldset {
    */
 legend {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -264,10 +266,10 @@ textarea {
    * 1. Add the correct box sizing in IE 10.
    * 2. Remove the padding in IE 10.
    */
-[type="checkbox"],
-[type="radio"] {
+[type='checkbox'],
+[type='radio'] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -276,8 +278,8 @@ textarea {
 /**
    * Correct the cursor style of increment and decrement buttons in Chrome.
    */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -285,7 +287,7 @@ textarea {
    * 1. Correct the odd appearance in Chrome and Safari.
    * 2. Correct the outline style in Safari.
    */
-[type="search"] {
+[type='search'] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -295,7 +297,7 @@ textarea {
 /**
    * Remove the inner padding in Chrome and Safari on macOS.
    */
-[type="search"]::-webkit-search-decoration {
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -348,7 +350,7 @@ ul {
 }
 
 body {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   width: 100%;
   overflow-x: hidden;
 }
@@ -375,9 +377,9 @@ textarea {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  display: none;
+  display: block;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   height: 50px;
   border-radius: 53px;
   cursor: pointer;
@@ -391,12 +393,9 @@ textarea {
   margin: 0 auto;
 }
 
-.mobile-nav {
-  display: none;
-}
-
-.header {
-  display: block;
+.headerScroll {
+  background-color: rgb(217, 217, 247) !important;
+  transition: background-color 0.3s linear;
 }
 
 @media screen and (max-width: 1200px) {
@@ -409,11 +408,8 @@ textarea {
   .wrapper {
     max-width: 800px;
   }
-  .mobile-nav {
-    display: block;
-  }
-  .header {
-    display: none;
+  .sroll-up {
+    bottom: 95px;
   }
 }
 
@@ -433,11 +429,11 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .header-nav__logo {
@@ -496,11 +492,11 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .footer-social__logo {
@@ -514,7 +510,11 @@ textarea {
   margin-top: 30px;
 }
 
-.footer-social__link:not(:last-child) {
+.footer-social__link > img {
+  width: 25px;
+}
+
+img .footer-social__link:not(:last-child) {
   margin-right: 10px;
 }
 
@@ -532,7 +532,7 @@ textarea {
   font-size: 16px;
   line-height: 1.35;
   margin-top: 0;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 600;
 }
 
@@ -543,7 +543,7 @@ textarea {
   opacity: 0.9;
   font-size: 14px;
   line-height: 1.55;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 300;
   max-width: 260px;
 }
@@ -552,12 +552,12 @@ textarea {
 .introduction {
   padding: 80px 0;
   width: 100%;
-  background-image: url("../img/background/introduction.png");
+  background-image: url('../img/background/introduction.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
   -webkit-box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
-          box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
+  box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
 }
 
 .introduction-title {
@@ -566,14 +566,14 @@ textarea {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 10px;
 }
 
@@ -601,7 +601,7 @@ textarea {
   text-decoration: none;
   cursor: pointer;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: #ff8833;
   border: 1px solid #ff8833;
   background-color: transparent;
@@ -616,10 +616,10 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .introduction-description__card {
@@ -631,6 +631,11 @@ textarea {
   color: #141b69;
   font-size: 25px;
   margin-bottom: 20px;
+}
+
+.introduction-description__card-title > img {
+  width: 20px;
+  height: 20px;
 }
 
 .introduction-description__card-description {
@@ -649,11 +654,11 @@ textarea {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-bottom: 100px;
 }
 
@@ -662,7 +667,7 @@ textarea {
   font-size: 42px;
   line-height: 1.23;
   font-weight: 600;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
 }
 
 .benefits-title__description {
@@ -670,7 +675,7 @@ textarea {
   font-size: 24px;
   line-height: 1.5;
   font-weight: 300;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
 }
 
 .benefits-content {
@@ -679,8 +684,8 @@ textarea {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .benefits-block {
@@ -701,14 +706,14 @@ textarea {
   font-weight: 700;
   font-size: 22px;
   line-height: 1.35;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
 }
 
 .benefits-block__description {
   color: #474fb4;
   font-size: 16px;
   line-height: 1.55;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 300;
 }
 
@@ -728,31 +733,31 @@ textarea {
 .arguments {
   padding: 100px 0;
   width: 100%;
-  background-image: url("../img/background/arguments.png");
+  background-image: url('../img/background/arguments.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center left;
   -webkit-box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
-          box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
+  box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .arguments__title {
   color: #041b69;
   font-size: 42px;
-  font-family: "Arial", Arial, sans-serif;
+  font-family: 'Arial', Arial, sans-serif;
   line-height: 1.55;
   font-weight: 700;
   margin-bottom: 100px;
@@ -763,7 +768,7 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .arguments__items {
@@ -790,7 +795,7 @@ textarea {
 .arguments__item-title {
   color: #041b69;
   font-size: 28px;
-  font-family: "Arial", Arial, sans-serif;
+  font-family: 'Arial', Arial, sans-serif;
   line-height: 1.55;
   font-weight: 700;
   margin-bottom: 0;
@@ -799,7 +804,7 @@ textarea {
 .arguments__item-description {
   color: #041b69;
   font-size: 16px;
-  font-family: "Arial", Arial, sans-serif;
+  font-family: 'Arial', Arial, sans-serif;
   line-height: 1.55;
   font-weight: 400;
 }
@@ -815,21 +820,21 @@ textarea {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-bottom: 100px;
 }
 
 .clients__title {
   color: #041b69;
   font-size: 42px;
-  font-family: "Arial", Arial, sans-serif;
+  font-family: 'Arial', Arial, sans-serif;
   line-height: 1.55;
   font-weight: 700;
 }
@@ -839,18 +844,15 @@ textarea {
   font-size: 24px;
   line-height: 1.5;
   font-weight: 300;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
 }
 
 .clients__item {
   max-width: 160px;
 }
 
-.slider {
-  width: 100%;
-}
-
 .mobile-nav {
+  display: block;
   z-index: 99;
   width: 100vw;
   border-top: 1px solid #e2e2e2;
@@ -864,11 +866,11 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .mobile-nav__item {
@@ -895,7 +897,7 @@ textarea {
 .mobile-nav__link-text {
   color: #041b69;
   font-weight: 300;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   margin-top: 7px;
   font-size: 11px;
   line-height: 1.2;
@@ -904,28 +906,28 @@ textarea {
 .contacts {
   padding: 80px 0;
   width: 100%;
-  background-image: url("../img/background/introduction.png");
+  background-image: url('../img/background/introduction.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
   -webkit-box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
-          box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
+  box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .contacts__title {
   color: #141b69;
   font-size: 42px;
-  font-family: "Arial", Arial, sans-serif;
+  font-family: 'Arial', Arial, sans-serif;
   line-height: 1.2;
   font-weight: 700;
 }
@@ -933,7 +935,7 @@ textarea {
 .contacts__title-description {
   color: #474fb4;
   font-size: 18px;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   line-height: 1.5;
   font-weight: 300;
 }
@@ -943,7 +945,7 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   margin-top: 100px;
 }
 
@@ -954,7 +956,7 @@ textarea {
 .contacts__list-item {
   color: #141b69;
   font-size: 18px;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   line-height: 1.45;
   font-weight: 300;
   margin-bottom: 5px;
@@ -967,8 +969,8 @@ textarea {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .contacts__form-input {
@@ -980,7 +982,7 @@ textarea {
   height: 50px;
   padding: 0 20px;
   line-height: 1.33;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   border-radius: 20px;
   width: 100%;
   margin-bottom: 20px;
@@ -1003,22 +1005,22 @@ textarea {
 .services {
   padding: 80px 0;
   width: 100%;
-  background-image: url("../img/background/introduction.png");
+  background-image: url('../img/background/introduction.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
   -webkit-box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
-          box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
+  box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .services__container {
@@ -1028,18 +1030,18 @@ textarea {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .services__title {
   color: #141b69;
   font-size: 42px;
-  font-family: "Arial", Arial, sans-serif;
+  font-family: 'Arial', Arial, sans-serif;
   line-height: 1.2;
   font-weight: 700;
 }
@@ -1048,7 +1050,7 @@ textarea {
   max-width: 750px;
   text-align: center;
   font-size: 18px;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   line-height: 1.5;
   font-weight: 300;
   color: #474fb4;
@@ -1060,15 +1062,15 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   background-color: #fff;
   margin-bottom: 30px;
 }
 
 .services__item-logo {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .services__item-container {
@@ -1083,14 +1085,14 @@ textarea {
   color: #474fb4;
   font-size: 14px;
   line-height: 1.55;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 500;
 }
 
 .services__item-btn {
   color: #ffffff;
   font-size: 13px;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   line-height: 1.55;
   font-weight: 300;
   border-width: 1px;
@@ -1106,18 +1108,18 @@ textarea {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .prices__btn {
   text-decoration: none;
   cursor: pointer;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: #ff8833;
   border: 1px solid #ff8833;
   background-color: transparent;
@@ -1131,7 +1133,7 @@ textarea {
   text-align: center;
   color: #141b69;
   font-size: 42px;
-  font-family: "Arial", Arial, sans-serif;
+  font-family: 'Arial', Arial, sans-serif;
   line-height: 1.2;
   font-weight: 700;
 }
@@ -1141,16 +1143,16 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   padding-bottom: 50px;
 }
 
 .prices__blocks-title {
   text-align: center;
   font-size: 24px;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   line-height: 1.5;
   font-weight: 700;
   color: #474fb4;
@@ -1167,11 +1169,11 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .prices__block-container > h3 {
@@ -1183,7 +1185,7 @@ textarea {
   line-height: 1.35;
   color: #041b69;
   text-transform: uppercase;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 600;
 }
 
@@ -1191,7 +1193,7 @@ textarea {
   color: #ff8833;
   font-size: 16px;
   line-height: 1.35;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 600;
 }
 
@@ -1204,18 +1206,18 @@ textarea {
   color: #474fb4;
   font-size: 16px;
   line-height: 1.55;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 300;
 }
 
 .work {
-  background-image: url("../img/background/introduction.png");
+  background-image: url('../img/background/introduction.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
   padding: 100px 0;
   -webkit-box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
-          box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
+  box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
 }
 
 .work__line {
@@ -1236,7 +1238,7 @@ textarea {
   background-color: #ff8833;
   font-size: 14px;
   color: white;
-  font-family: "Arial", Arial, sans-serif;
+  font-family: 'Arial', Arial, sans-serif;
   line-height: 1.55;
   font-weight: 700;
   position: absolute;
@@ -1246,7 +1248,7 @@ textarea {
   text-align: center;
   color: #141b69;
   font-size: 36px;
-  font-family: "Arial", Arial, sans-serif;
+  font-family: 'Arial', Arial, sans-serif;
   line-height: 1.2;
   font-weight: 700;
 }
@@ -1256,7 +1258,7 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .work__item {
@@ -1266,7 +1268,7 @@ textarea {
 .work__subtitle {
   font-size: 18px;
   color: #141b69;
-  font-family: "Arial", Arial, sans-serif;
+  font-family: 'Arial', Arial, sans-serif;
   line-height: 1.55;
   font-weight: 700;
 }
@@ -1274,7 +1276,7 @@ textarea {
 .work__description {
   font-size: 14px;
   color: #474fb4;
-  font-family: "Arial", Arial, sans-serif;
+  font-family: 'Arial', Arial, sans-serif;
   line-height: 1.55;
   font-weight: 400;
 }
@@ -1298,12 +1300,12 @@ textarea {
 .projects {
   padding: 100px 0;
   width: 100%;
-  background-image: url("../img/background/introduction.png");
+  background-image: url('../img/background/introduction.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center left;
   -webkit-box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
-          box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
+  box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
   background-attachment: fixed;
 }
 
@@ -1315,7 +1317,7 @@ textarea {
 .project__title {
   color: #141b69;
   font-weight: 700;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-size: 52px;
   line-height: 1.23;
   margin-bottom: 50px;
@@ -1325,7 +1327,7 @@ textarea {
   color: #141b69;
   font-size: 18px;
   font-weight: 300;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   padding: 50px 100px;
 }
 
@@ -1333,7 +1335,7 @@ textarea {
   text-decoration: none;
   cursor: pointer;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: #ff8833;
   border: 1px solid #ff8833;
   background-color: transparent;
@@ -1354,21 +1356,21 @@ textarea {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .feedback__title {
   margin: 0;
   color: #141b69;
   font-weight: 700;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-size: 52px;
   line-height: 1.23;
   margin-bottom: 100px;
@@ -1379,8 +1381,8 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   max-width: 760px;
 }
 
@@ -1399,7 +1401,7 @@ textarea {
   color: #141b69;
   font-size: 18px;
   font-weight: 300;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   line-height: 1.55;
   margin-bottom: 20px;
 }
@@ -1408,7 +1410,7 @@ textarea {
   margin: 0;
   color: #141b69;
   font-weight: 700;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   margin-bottom: 2px;
   font-size: 16px;
   line-height: 1.35;
@@ -1416,7 +1418,7 @@ textarea {
 
 .feedback__working {
   margin: 0;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 300;
   color: #000;
   font-size: 14px;

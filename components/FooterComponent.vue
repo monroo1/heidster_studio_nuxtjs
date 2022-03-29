@@ -17,7 +17,7 @@
             :href="link.href"
             class="footer-social__link"
           >
-            <img :src="require(`~/assets/img/icons/${link.img}.png`)" style="width: 25px">
+            <img :src="require(`~/assets/img/icons/${link.img}.png`)">
           </a>
         </div>
         <p class="footer-copy">
@@ -104,9 +104,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .footer-social__link {
   width: 30px;
   height: 30px;
+}
+.footer__li > a {
+  color: #141b69;
+}
+.footer__li > a:hover {
+  color: #ff8833;;
 }
 </style>

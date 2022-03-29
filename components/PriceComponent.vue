@@ -22,9 +22,9 @@
           {{ item.des }}
         </p>
       </div>
-      <div style="margin-top: 80px">
+      <ApplicationBtn style="margin-top: 80px">
         Оставить заявку
-      </div>
+      </ApplicationBtn>
     </div>
   </section>
 </template>

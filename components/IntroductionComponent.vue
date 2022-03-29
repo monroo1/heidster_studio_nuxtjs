@@ -12,7 +12,7 @@
         Хотите увеличить продажи или повысить положение сайта в сети?<br>
         Обращайтесь – мы всегда рады помочь вам в решении ваших задач.
       </p>
-      <div>Оставить заявку</div>
+      <ApplicationBtn style="justify-content: flex-start;">Оставить заявку</ApplicationBtn>
     </div>
 
     <div class="introduction-description wrapper">

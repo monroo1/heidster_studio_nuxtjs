@@ -1,5 +1,5 @@
 <template>
-  <div class="dialog" v-if="show === true" @click.stop="hideDialog">
+  <div class="dialog" @click.stop="hideDialog">
     <div class="dialog__content" @click.stop>
       <h3 class="dialog__title">Форма заявки</h3>
       <p class="dialog__des">Заполните короткую форму</p>
@@ -56,13 +56,9 @@ export default {
       text: "",
     };
   },
-  name: "form-dialog",
-  props: {
-    show: { type: Boolean, default: true },
-  },
   methods: {
     hideDialog() {
-      this.$emit("update:show", false);
+      this.$parent.hideDialog()
     },
   },
 };
