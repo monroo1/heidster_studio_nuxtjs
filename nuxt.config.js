@@ -34,7 +34,13 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    ['nuxt-gmaps', {
+      key: 'AIzaSyDxZEKc_tIHueF_Jptiut14AbimwniHnrU',
+      //you can use libraries: ['places']
+    }]
+  
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
