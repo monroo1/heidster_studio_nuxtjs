@@ -10,14 +10,14 @@
 <script>
 export default {
   data() {
-      return {
-        title: 'Heidster Studio'
-      }
-    },
-    head() {
-      return {
-        title: this.title, 
-      }
+    return {
+      title: 'Heidster Studio'
     }
+  },
+  head() {
+    return {
+      title: this.title, 
+    }
+  }
 }
 </script>

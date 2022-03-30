@@ -43,4 +43,9 @@ export default({
   padding: 20px 60px;
   font-weight: 600;
 }
+.application__btn:active, .application__btn:hover {
+  color: #fff;
+  border-color: #141b69;
+  background-color: #141b69
+}
 </style>
