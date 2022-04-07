@@ -3,8 +3,8 @@
     <MobileNavComponent  v-if="width < 980" />
     <HeaderComponent v-else :class="headerClass"/>
     <Nuxt />
-    <ScrollComponent v-if="windowTop > 500" />
-    <LazyFooterComponent />
+    <ScrollComponent v-if="windowTop > 700" />
+    <LazyFooterComponent v-if="width > 980"/>
   </div>
 </template>
 

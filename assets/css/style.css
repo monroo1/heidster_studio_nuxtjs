@@ -400,13 +400,52 @@ textarea {
 
 @media screen and (max-width: 1200px) {
   .wrapper {
-    max-width: 1000px;
+    max-width: 960px;
+  }
+  .introduction-title__title {
+    font-size: 82px !important;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 960px) {
+  .services__item > img{
+    width: 40% !important;
+    height: 100% !important;
+  }
+  .services__item-container {
+    width: 60%;
+  }
+  .services__item-container {
+    padding: 10px !important;
+  }
+  .prices__block {
+    width: 100% !important;
+  }
+  .argumnets__container > img {
+    max-width: 100%;
+  }
+  .arguments__items {
+    max-width: 100% !important;
+  }
+  .argumnets__container {
+    flex-direction: column;
+  }
+  .benefits-block {
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  .introduction-title__title {
+    font-size: 64px !important;
+  }
+  .introduction-description__card {
+    max-width: 100% !important;
+    width: 100%;
+  }
+  .introduction {
+    padding: 0 !important;
+  }
   .wrapper {
-    max-width: 800px;
+    max-width: 640px;
   }
   .sroll-up {
     bottom: 95px;
@@ -552,7 +591,7 @@ img .footer-social__link:not(:last-child) {
 .introduction {
   padding: 80px 0;
   width: 100%;
-  background-image: url('../img/background/introduction.png');
+  background-image: url('~/assets/img/background/introduction.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
@@ -591,8 +630,8 @@ img .footer-social__link:not(:last-child) {
 }
 
 .introduction-title__description {
-  font-size: 22px;
-  color: rgba(71, 79, 180, 0.7);
+  font-size: 20px;
+  color: rgb(71, 79, 180);
   padding: 40px 0 54px 0;
   line-height: 1.55;
 }
@@ -639,7 +678,7 @@ img .footer-social__link:not(:last-child) {
 }
 
 .introduction-description__card-description {
-  color: rgba(4, 27, 105, 0.7);
+  color: rgb(4, 27, 150);
   font-size: 16px;
   line-height: 1.55;
 }
@@ -710,7 +749,7 @@ img .footer-social__link:not(:last-child) {
 }
 
 .benefits-block__description {
-  color: #474fb4;
+  color: rgb(4, 27, 190);
   font-size: 16px;
   line-height: 1.55;
   font-family: 'Roboto', Arial, sans-serif;
@@ -733,7 +772,7 @@ img .footer-social__link:not(:last-child) {
 .arguments {
   padding: 100px 0;
   width: 100%;
-  background-image: url('../img/background/arguments.png');
+  background-image: url('~/assets/img/background/arguments.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center left;
@@ -802,7 +841,7 @@ img .footer-social__link:not(:last-child) {
 }
 
 .arguments__item-description {
-  color: #041b69;
+  color: rgb(4, 27, 140);
   font-size: 16px;
   font-family: 'Arial', Arial, sans-serif;
   line-height: 1.55;
@@ -906,7 +945,7 @@ img .footer-social__link:not(:last-child) {
 .contacts {
   padding: 80px 0;
   width: 100%;
-  background-image: url('../img/background/introduction.png');
+  background-image: url('~/assets/img/background/introduction.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
@@ -1005,7 +1044,7 @@ img .footer-social__link:not(:last-child) {
 .services {
   padding: 80px 0;
   width: 100%;
-  background-image: url('../img/background/introduction.png');
+  background-image: url('~/assets/img/background/introduction.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
@@ -1211,7 +1250,7 @@ img .footer-social__link:not(:last-child) {
 }
 
 .work {
-  background-image: url('../img/background/introduction.png');
+  background-image: url('~/assets/img/background/introduction.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
@@ -1221,19 +1260,12 @@ img .footer-social__link:not(:last-child) {
 }
 
 .work__line {
-  width: 80%;
-  background-color: #141b69;
-  height: 2px;
-  z-index: 2;
   position: relative;
-  margin-left: 20px;
-  margin-top: 100px;
-  margin-bottom: 20px;
 }
 
 .work__line-item {
-  padding: 10px 18px;
-  top: -20px;
+  z-index: 2;
+  padding: 10px 17px;
   border-radius: 50%;
   background-color: #ff8833;
   font-size: 14px;
@@ -1241,7 +1273,6 @@ img .footer-social__link:not(:last-child) {
   font-family: 'Arial', Arial, sans-serif;
   line-height: 1.55;
   font-weight: 700;
-  position: absolute;
 }
 
 .work__title {
@@ -1258,7 +1289,7 @@ img .footer-social__link:not(:last-child) {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .work__item {
@@ -1281,26 +1312,10 @@ img .footer-social__link:not(:last-child) {
   font-weight: 400;
 }
 
-#work__item-one {
-  left: 0;
-}
-
-#work__item-two {
-  left: 32%;
-}
-
-#work__item-three {
-  right: 32%;
-}
-
-#work__item-four {
-  right: 0;
-}
-
 .projects {
   padding: 100px 0;
   width: 100%;
-  background-image: url('../img/background/introduction.png');
+  background-image: url('~/assets/img/background/introduction.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center left;
@@ -1310,8 +1325,21 @@ img .footer-social__link:not(:last-child) {
 }
 
 .project {
-  padding-top: 100px;
   text-align: center;
+}
+
+.project__container {
+  background-image: url('~/assets/img/background/introduction.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  -webkit-box-shadow: inset 0 250px 900px 0 rgba(182, 184, 245, 0.25);
+  box-shadow: inset 0 250px 900px 0 rgb(182 184 245 / 25%);
 }
 
 .project__title {
@@ -1321,6 +1349,7 @@ img .footer-social__link:not(:last-child) {
   font-size: 52px;
   line-height: 1.23;
   margin-bottom: 50px;
+  margin-top: 0;
 }
 
 .project__desription {
@@ -1347,7 +1376,7 @@ img .footer-social__link:not(:last-child) {
 
 .feedback {
   background-color: white;
-  padding-bottom: 50px;
+  padding: 45px 0;
 }
 
 .feedback__container {
@@ -1429,31 +1458,3 @@ img .footer-social__link:not(:last-child) {
 .feedback__working-span {
   color: #ff8562;
 }
-
-.project__element-slide {
-  width: 500px;
-  padding: 0 50px;
-}
-
-.slider-container {
-  background-color: white;
-}
-
-.swiper {
-  max-width: 600px;
-  height: auto;
-  margin: 0 auto;
-}
-
-.swiper-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  left: 0;
-  -webkit-transition: all ease 0.5s;
-  transition: all ease 0.5s;
-}
-
-/**/
-/*# sourceMappingURL=style.css.map */
