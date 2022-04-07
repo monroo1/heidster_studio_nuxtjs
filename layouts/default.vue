@@ -4,7 +4,7 @@
     <HeaderComponent v-else :class="headerClass"/>
     <Nuxt />
     <ScrollComponent v-if="windowTop > 700" />
-    <LazyFooterComponent />
+    <LazyFooterComponent v-if="width > 980"/>
   </div>
 </template>
 
