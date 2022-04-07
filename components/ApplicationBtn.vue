@@ -48,4 +48,12 @@ export default({
   border-color: #141b69;
   background-color: #141b69
 }
+
+@media screen and (max-width: 960px) {
+  .application__btn {
+    padding: 12px 25px;
+    font-size: 14px;
+    border-radius: 16px;
+  }
+}
 </style>

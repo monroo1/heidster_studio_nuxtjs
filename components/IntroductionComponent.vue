@@ -87,3 +87,24 @@
     </div>
   </section>
 </template>
+
+<style lang="scss">
+  @media screen and (max-width: 960px){
+    .introduction-title__description {
+      padding: 0;
+      font-size: 14px;
+    }
+    .introduction-description {
+      margin-top: 40px; 
+    }
+    .introduction-description__card-title { 
+      font-size: 16px;
+      margin-bottom: 10px;
+      margin-top: 0;
+    }
+    .introduction-description__card-description {
+      font-size: 14px;
+    }
+     
+  }
+</style>

@@ -1,7 +1,7 @@
 <!-- slider 8 -->
 <template>
   <section class="clients">
-    <div class="clients__container">
+    <div class="clients__container wrapper">
       <h2 class="clients__title">
         Наши клиенты
       </h2>
@@ -29,3 +29,22 @@
     </div>
   </section>
 </template>
+
+<style lang="scss">
+  @media screen and (max-width: 960px) { 
+    .clients {
+      padding: 30px 0;
+    }
+    .clients__container {
+      margin-bottom: 0;
+    }
+    .clients__title {
+      font-size: 28px;
+      align-self: flex-start;
+      margin-bottom: 0;
+    }
+    .clients__description {
+      font-size: 16px;
+    }
+  }
+</style>

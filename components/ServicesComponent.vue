@@ -69,9 +69,23 @@ export default {
 }
 </script>
 
-<style scoped>
-.services__item-logo {
-  width: 200px;
-  height: 250px;
-}
+<style lang="scss">
+  .services__item-logo {
+    width: 200px;
+    height: 250px;
+  }
+
+  @media screen and (max-width: 960px) {
+    .services {
+      padding-top: 0;
+    }
+    .services__title {
+      font-size: 28px;
+    }
+    .services__title-description {
+      font-size: 16px;
+      padding: 0 32px;
+      margin: 0;
+    }
+  }
 </style>

@@ -22,7 +22,7 @@
           {{ item.des }}
         </p>
       </div>
-      <ApplicationBtn style="margin-top: 80px">
+      <ApplicationBtn class="prices__btn">
         Оставить заявку
       </ApplicationBtn>
     </div>
@@ -179,3 +179,37 @@ export default {
   }
 }
 </script>
+
+
+<style lang="scss">
+  .prices__btn {
+    margin-top: 80px;
+  }
+  @media screen and (max-width: 960px) {
+    .prices__block-price {
+      font-size: 14px;
+    }
+    .prices__title {
+      font-size: 28px;
+    }
+    .prices__blocks {
+      padding-bottom: 40px;
+    }
+    .prices__blocks-title {
+      font-size: 18px;
+      padding-bottom: 15px;
+    }
+    .prices__block-title {
+      font-size: 14px;
+    }
+    .prices__block-description {
+      font-size: 12px;
+    }
+    .prices__btn {
+      margin-top: 15px;
+    }
+    .prices {
+      padding-bottom: 30px;
+    }
+  }
+</style>

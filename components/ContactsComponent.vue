@@ -4,7 +4,7 @@
       <h2 class="contacts__title">
         {{ title }}
       </h2>
-      <p class="contacts__title-description">
+      <p class="contacts__title-description wrapper">
         {{ subtitle }}
       </p>
       <div class="contacts__container wrapper">
@@ -105,3 +105,39 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  @media screen and (max-width: 960px) {
+    .contacts {
+      padding-top: 0;
+      padding-bottom: 40px;
+    }
+    .contacts__title {
+      font-size: 28px;
+    }
+    .contacts__title-description {
+      text-align: center;
+      font-size: 16px;
+    }
+    .contacts__container {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 16px;
+
+      & > ul {
+        width: 100%;
+      }
+      & > form {
+        width: 100%;
+      }
+    }
+    .contacts__form-input {
+      max-width: 100%;
+      width: auto;
+    }
+    .contacts__list-item {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+</style>

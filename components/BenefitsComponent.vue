@@ -51,3 +51,32 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  @media screen and (max-width: 960px){
+    .benefits {
+      padding: 40px 0;
+    }
+    .benefits-block {
+      padding-top: 20px;
+      padding-left: 40px;
+    }
+    .benefits-title {
+      margin-bottom: 34px;
+    }
+    .benefits-title__title {
+      font-size: 28px;
+      align-self: start;
+    }
+    .benefits-title__description {
+      font-size: 16px;
+    }
+    .benefits-block__description {
+      font-size: 14px;
+    }
+    .benefits-block__title {
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+  }
+</style>

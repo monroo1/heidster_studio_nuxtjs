@@ -1,6 +1,6 @@
 <template>
   <section class="arguments">
-    <h2 class="arguments__title">
+    <h2 class="arguments__title wrapper">
       {{ title }}
     </h2>
     <div class="argumnets__container wrapper">
@@ -53,3 +53,29 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  @media screen and (max-width: 960px){
+    .arguments {
+      padding: 30px 0;
+    }
+    .arguments__title {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    .arguments__item-img {
+      width: 35px;
+      height: 35px;
+    }
+    .arguments__item {
+      padding-left: 40px;
+    }
+    .arguments__item-title {
+      font-size: 18px;
+    }
+    .arguments__item-description {
+      font-size: 14px;
+      margin-top: 0;
+    }
+  }
+</style>

@@ -77,6 +77,21 @@
   }
 
   @media screen and (max-width: 960px) {
+    .work {
+      padding: 24px 0;
+    }
+    .work__title {
+      font-size: 28px;
+    }
+    .work__subtitle {
+      font-size: 16px;
+      margin-bottom: 5px;
+      margin-top: 7%;
+    }
+    .work__description {
+      margin-top: 0;
+       font-size: 12px;
+    }
     .work__line::after {
       position: absolute;
       top: 0;

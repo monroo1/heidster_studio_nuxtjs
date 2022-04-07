@@ -67,3 +67,19 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+  @media screen and (max-width: 960px) {
+    .project__container {
+      padding: 0;
+    }
+    .project__title {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+    .project__desription {
+      padding: 0;
+      font-size: 16px;
+    }
+  }
+</style>

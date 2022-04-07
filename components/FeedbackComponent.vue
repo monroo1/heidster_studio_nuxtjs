@@ -71,3 +71,11 @@ export default ({
 })
 </script>
 
+<style lang="scss">
+  @media screen and (max-width: 960px) {
+    .feedback__title {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+  }
+</style>

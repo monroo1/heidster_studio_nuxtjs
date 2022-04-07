@@ -73,7 +73,7 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   display: flex;
-  z-index: 999;
+  z-index: 99999;
 }
 
 .dialog__content {
@@ -83,7 +83,7 @@ export default {
   margin: auto;
   background-color: #fff;
   min-height: 50px;
-  min-width: 300px;
+  min-width: 200px;
   padding: 40px 45px;
   max-width: 470px;
 }
@@ -155,5 +155,26 @@ export default {
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 300;
   color: #000;
+}
+
+@media screen and (max-width: 960px){
+  .dialog__content {
+    max-width: calc(100% - 90px);
+  }
+  .dialog__title {
+    font-size: 20px;
+  }
+  .dialog__des {
+    font-size: 14px;
+  }
+  .dialog__btn-des {
+    font-size: 14px;
+  }
+  .dialog__content > form > input {
+    height: 40px;
+  }
+  .dialog__content > form > textarea {
+    height: 70px;
+  }
 }
 </style>
